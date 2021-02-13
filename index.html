@@ -15,9 +15,14 @@
 
         gtag('config', 'G-G46PW2FYRP');
 
-        ga('send', 'event', 'Videos', 'play', 'Fall Campaign', {
-            nonInteraction: true
-        });
+
+        function handleOutboundLinkClicks(event) {
+            ga('send', 'event', {
+                eventCategory: 'Outbound Link',
+                eventAction: 'click',
+                eventLabel: event.target.href
+            });
+        }
     </script>
 </head>
 
